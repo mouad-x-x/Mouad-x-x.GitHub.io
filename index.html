@@ -592,19 +592,19 @@
         </div>
     </footer>
 
-    <script>
-        // Demo community creator
-        document.getElementById('communityForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('communityName').value;
-            const creator = document.getElementById('creatorName').value;
-            const slug = name.toLowerCase().replace(/[^a-z0-9]/g, '-');
-            const link = `crewbase.app/c/${slug}`;
-            
-            document.getElementById('demoLink').textContent = link;
-            document.getElementById('demoResult').classList.add('show');
-        });
-    </script>
-
+<script>
+    document.getElementById('communityForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('communityName').value;
+        const creator = document.getElementById('creatorName').value;
+        
+        // Open their email client with pre-filled message
+        const subject = `New CrewBase Community: ${name}`;
+        const body = `Hi, I want to create a community on CrewBase.%0D%0A%0D%0ACommunity Name: ${name}%0D%0ACreator Name: ${creator}%0D%0A%0D%0AI'm ready to pay $5/month via PayPal.`;
+        
+        window.location.href = `mailto:YOUREMAIL@GMAIL.COM?subject=${subject}&body=${body}`;
+    });
+<script>
+    
 </body>
 </html>

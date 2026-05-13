@@ -197,9 +197,9 @@
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
@@ -213,6 +213,21 @@
 
         .pricing-card.popular {
             border-color: #8b5cf6;
+            transform: scale(1.05);
+            position: relative;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #06b6d4, #8b5cf6);
+            color: white;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
         }
 
         .price {
@@ -272,6 +287,9 @@
             .nav-links {
                 display: none;
             }
+            .pricing-card.popular {
+                transform: scale(1);
+            }
         }
     </style>
 </head>
@@ -293,7 +311,7 @@
     <section class="hero">
         <div class="container">
             <h1>Your Community.<br>Your Rules.<br>No Algorithms.</h1>
-            <p>Create a private community in 60 seconds. You bring the people. We handle the rest.</p>
+            <p>Start free with 5 members. Upgrade when your crew grows.</p>
             <a href="#create" class="btn btn-primary">Create Your Community</a>
             <a href="#pricing" class="btn btn-secondary" style="margin-left: 10px;">See Pricing</a>
         </div>
@@ -303,9 +321,9 @@
         <div class="container">
             <div class="demo-box">
                 <h3>🚀 Create Your Community</h3>
-                <p>Fill this out. We'll email you within 24 hours.</p>
+                <p>Free to start. No credit card needed.</p>
                 
-                <form action="https://formspree.io/f/xykovldk" method="POST"
+                <form action="https://formspree.io/f/xykovldk" method="POST">
                     <div class="form-group">
                         <label>Community Name</label>
                         <input type="text" name="community_name" placeholder="e.g., Fitness Warriors" required>
@@ -318,13 +336,14 @@
                         <label>Your Email</label>
                         <input type="email" name="email" placeholder="your@email.com" required>
                     </div>
+                    <input type="hidden" name="_next" value="https://crewbaseco.netlify.app">
                     <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 8px;">
-                        Create Community — $5/month
+                        🚀 Create Free Community
                     </button>
                 </form>
                 
                 <p style="color: #64748b; font-size: 12px; margin-top: 16px; text-align: center;">
-                    🔒 Free setup. Pay via PayPal after we email you.
+                    Free: 5 members. Upgrade anytime.
                 </p>
             </div>
         </div>
@@ -364,33 +383,38 @@
                     <h3>Free</h3>
                     <div class="price">$0<span>/month</span></div>
                     <ul>
-                        <li>Up to 25 members</li>
+                        <li>Up to 5 members</li>
                         <li>Basic chat</li>
                         <li>1 admin</li>
+                        <li>No file sharing</li>
                     </ul>
                     <a href="#create" class="btn btn-secondary" style="width: 100%;">Get Started</a>
                 </div>
                 <div class="pricing-card popular">
+                    <div class="popular-badge">MOST POPULAR</div>
                     <h3>Starter</h3>
-                    <div class="price">$5<span>/month</span></div>
+                    <div class="price">$4.99<span>/month</span></div>
                     <ul>
-                        <li>Up to 200 members</li>
+                        <li>Up to 50 members</li>
                         <li>File sharing</li>
                         <li>3 admins</li>
                         <li>Custom branding</li>
+                        <li>Email support</li>
                     </ul>
-                    <a href="https://paypal.me/chillclothes/5" class="paypal-btn" target="_blank">Pay with PayPal</a>
+                    <a href="https://paypal.me/chillclothes/4.99" class="paypal-btn" target="_blank">Pay $4.99 with PayPal</a>
                 </div>
                 <div class="pricing-card">
                     <h3>Pro</h3>
-                    <div class="price">$15<span>/month</span></div>
+                    <div class="price">$15.99<span>/month</span></div>
                     <ul>
                         <li>Unlimited members</li>
-                        <li>Analytics</li>
-                        <li>10 admins</li>
+                        <li>Everything in Starter</li>
+                        <li>Unlimited admins</li>
+                        <li>Analytics dashboard</li>
+                        <li>Priority support</li>
                         <li>API access</li>
                     </ul>
-                    <a href="https://paypal.me/chillclothes/15" class="paypal-btn" target="_blank">Pay with PayPal</a>
+                    <a href="https://paypal.me/chillclothes/15.99" class="paypal-btn" target="_blank">Pay $15.99 with PayPal</a>
                 </div>
             </div>
         </div>

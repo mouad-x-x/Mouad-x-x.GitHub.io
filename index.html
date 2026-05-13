@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CrewBase — Your Community, Your Rules</title>
+    <link rel="icon" type="image/png" href="crewbase_rounded_favicon.png">
     <style>
         * {
             margin: 0;
@@ -24,7 +25,6 @@
             padding: 0 24px;
         }
 
-        /* Navigation */
         nav {
             padding: 20px 0;
             border-bottom: 1px solid #1e293b;
@@ -39,10 +39,14 @@
         .logo {
             font-size: 24px;
             font-weight: 800;
-            background: linear-gradient(135deg, #06b6d4, #8b5cf6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 32px;
+            border-radius: 8px;
         }
 
         .nav-links a {
@@ -50,42 +54,28 @@
             text-decoration: none;
             margin-left: 32px;
             font-size: 15px;
-            transition: color 0.2s;
         }
 
-        .nav-links a:hover {
-            color: #e2e8f0;
-        }
-
-        /* Hero */
         .hero {
-            padding: 100px 0 80px;
+            padding: 80px 0 60px;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 56px;
+            font-size: 48px;
             font-weight: 800;
             line-height: 1.1;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             background: linear-gradient(135deg, #f8fafc, #94a3b8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .hero p {
-            font-size: 20px;
+            font-size: 18px;
             color: #64748b;
-            max-width: 600px;
-            margin: 0 auto 40px;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
+            max-width: 500px;
+            margin: 0 auto 30px;
         }
 
         .btn {
@@ -94,19 +84,14 @@
             font-size: 16px;
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.2s;
-            cursor: pointer;
+            display: inline-block;
             border: none;
+            cursor: pointer;
         }
 
         .btn-primary {
             background: linear-gradient(135deg, #06b6d4, #8b5cf6);
             color: white;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(6, 182, 212, 0.3);
         }
 
         .btn-secondary {
@@ -115,38 +100,32 @@
             border: 1px solid #334155;
         }
 
-        .btn-secondary:hover {
-            background: #334155;
-        }
-
-        /* Demo Section */
         .demo {
-            padding: 60px 0;
+            padding: 40px 0 60px;
         }
 
         .demo-box {
             background: linear-gradient(135deg, #1e293b, #0f172a);
             border: 1px solid #334155;
             border-radius: 16px;
-            padding: 40px;
-            max-width: 500px;
+            padding: 32px;
+            max-width: 480px;
             margin: 0 auto;
-            text-align: center;
         }
 
         .demo-box h3 {
-            font-size: 20px;
+            font-size: 22px;
             margin-bottom: 8px;
         }
 
-        .demo-box p {
+        .demo-box > p {
             color: #64748b;
             margin-bottom: 24px;
+            font-size: 15px;
         }
 
         .form-group {
             margin-bottom: 16px;
-            text-align: left;
         }
 
         .form-group label {
@@ -171,95 +150,56 @@
             border-color: #06b6d4;
         }
 
-        .demo-result {
-            display: none;
-            margin-top: 20px;
-            padding: 20px;
-            background: #064e3b;
-            border: 1px solid #059669;
-            border-radius: 8px;
-        }
-
-        .demo-result.show {
-            display: block;
-        }
-
-        .demo-link {
-            color: #34d399;
-            font-family: monospace;
-            font-size: 14px;
-            word-break: break-all;
-        }
-
-        /* Features */
         .features {
-            padding: 80px 0;
+            padding: 60px 0;
         }
 
         .section-title {
             text-align: center;
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 700;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .section-subtitle {
             text-align: center;
             color: #64748b;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
         .feature-card {
             background: #1e293b;
             border: 1px solid #334155;
             border-radius: 12px;
-            padding: 32px;
-            transition: all 0.2s;
-        }
-
-        .feature-card:hover {
-            border-color: #06b6d4;
-            transform: translateY(-4px);
-        }
-
-        .feature-icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, #06b6d4, #8b5cf6);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            margin-bottom: 20px;
+            padding: 28px;
         }
 
         .feature-card h3 {
             font-size: 18px;
             margin-bottom: 8px;
+            color: #f8fafc;
         }
 
         .feature-card p {
             color: #64748b;
-            font-size: 15px;
+            font-size: 14px;
         }
 
-        /* Pricing */
         .pricing {
-            padding: 80px 0;
+            padding: 60px 0;
         }
 
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
-            max-width: 900px;
+            gap: 20px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
@@ -267,38 +207,18 @@
             background: #1e293b;
             border: 1px solid #334155;
             border-radius: 16px;
-            padding: 32px;
+            padding: 28px;
             text-align: center;
-            position: relative;
         }
 
         .pricing-card.popular {
             border-color: #8b5cf6;
-            transform: scale(1.05);
-        }
-
-        .popular-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #06b6d4, #8b5cf6);
-            color: white;
-            padding: 4px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .pricing-card h3 {
-            font-size: 20px;
-            margin-bottom: 8px;
         }
 
         .price {
-            font-size: 48px;
+            font-size: 42px;
             font-weight: 800;
-            margin: 16px 0;
+            margin: 12px 0;
         }
 
         .price span {
@@ -310,22 +230,21 @@
         .pricing-card ul {
             list-style: none;
             text-align: left;
-            margin: 24px 0;
+            margin: 20px 0;
         }
 
         .pricing-card ul li {
-            padding: 8px 0;
+            padding: 6px 0;
             color: #94a3b8;
-            font-size: 15px;
+            font-size: 14px;
         }
 
         .pricing-card ul li::before {
             content: "✓";
             color: #34d399;
-            margin-right: 10px;
+            margin-right: 8px;
         }
 
-        /* PayPal Button Placeholder */
         .paypal-btn {
             display: inline-block;
             background: #0070ba;
@@ -335,78 +254,21 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 15px;
-            transition: background 0.2s;
+            width: 100%;
         }
 
-        .paypal-btn:hover {
-            background: #005ea6;
-        }
-
-        /* How It Works */
-        .how-it-works {
-            padding: 80px 0;
-        }
-
-        .steps {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-
-        .step {
-            text-align: center;
-            max-width: 250px;
-        }
-
-        .step-number {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, #06b6d4, #8b5cf6);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            font-weight: 700;
-            margin: 0 auto 16px;
-        }
-
-        .step h3 {
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-
-        .step p {
-            color: #64748b;
-            font-size: 15px;
-        }
-
-        /* Footer */
         footer {
             border-top: 1px solid #1e293b;
-            padding: 40px 0;
+            padding: 30px 0;
             text-align: center;
             color: #64748b;
+            font-size: 14px;
         }
 
-        footer a {
-            color: #94a3b8;
-            text-decoration: none;
-            margin: 0 16px;
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 36px;
+                font-size: 32px;
             }
-            
-            .pricing-card.popular {
-                transform: scale(1);
-            }
-            
             .nav-links {
                 display: none;
             }
@@ -415,123 +277,86 @@
 </head>
 <body>
 
-    <!-- Navigation -->
     <nav>
         <div class="container">
-            <div class="logo">⚡ CrewBase</div>
+            <div class="logo">
+                <img src="crewbase_rounded_icon.png" alt="CrewBase">
+                <span style="color: #f8fafc;">Crew</span><span style="color: #06e6f0;">Base</span>
+            </div>
             <div class="nav-links">
                 <a href="#features">Features</a>
                 <a href="#pricing">Pricing</a>
-                <a href="#how">How It Works</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero -->
     <section class="hero">
         <div class="container">
             <h1>Your Community.<br>Your Rules.<br>No Algorithms.</h1>
-            <p>Create a private community in 60 seconds. You bring the people. We handle the rest. No tech skills needed.</p>
-            <div class="cta-buttons">
-                <a href="#create" class="btn btn-primary">Create Your Community</a>
-                <a href="#pricing" class="btn btn-secondary">See Pricing</a>
-            </div>
+            <p>Create a private community in 60 seconds. You bring the people. We handle the rest.</p>
+            <a href="#create" class="btn btn-primary">Create Your Community</a>
+            <a href="#pricing" class="btn btn-secondary" style="margin-left: 10px;">See Pricing</a>
         </div>
     </section>
 
-    <!-- Demo / Create -->
     <section class="demo" id="create">
         <div class="container">
             <div class="demo-box">
                 <h3>🚀 Create Your Community</h3>
-                <p>Try it now. No signup required.</p>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features -->
-    <section class="features" id="features">
-        <div class="container">
-            <h2 class="section-title">Everything You Need</h2>
-            <p class="section-subtitle">No clutter. No noise. Just a clean space for your crew.</p>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">💬</div>
-                    <h3>Real-Time Chat</h3>
-                    <p>Instant messaging with your members. No delays, no algorithms hiding posts.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📁</div>
-                    <h3>File Sharing</h3>
-                    <p>Share docs, videos, images. Organized by topic. Searchable history.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">👥</div>
-                    <h3>Member Management</h3>
-                    <p>Roles, permissions, invites. You're the boss of your space.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Simple Analytics</h3>
-                    <p>See who's active, what's popular. No complex dashboards.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Privacy First</h3>
-                    <p>No ads. No data mining. Your community, your data.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>Works Everywhere</h3>
-                    <p>Phone, tablet, laptop. Responsive design that just works.</p>
-                                    <form id="communityForm">
+                <p>Fill this out. We'll email you within 24 hours.</p>
+                
+                <form action="https://formsubmit.co/YOUREMAIL@gmail.com" method="POST">
                     <div class="form-group">
                         <label>Community Name</label>
-                        <input type="text" id="communityName" placeholder="e.g., Fitness Warriors" required>
+                        <input type="text" name="community_name" placeholder="e.g., Fitness Warriors" required>
                     </div>
                     <div class="form-group">
                         <label>Your Name</label>
-                        <input type="text" id="creatorName" placeholder="e.g., Alex" required>
+                        <input type="text" name="your_name" placeholder="e.g., Alex" required>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Create Community</button>
+                    <div class="form-group">
+                        <label>Your Email</label>
+                        <input type="email" name="email" placeholder="your@email.com" required>
+                    </div>
+                    <input type="hidden" name="_subject" value="New CrewBase Request!">
+                    <input type="hidden" name="_captcha" value="false">
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 8px;">
+                        Create Community — $5/month
+                    </button>
                 </form>
-                <div class="demo-result" id="demoResult">
-                    <p style="color: #34d399; margin-bottom: 8px;">✅ Community created!</p>
-                    <p style="color: #94a3b8; font-size: 14px;">Your link:</p>
-                    <p class="demo-link" id="demoLink"></p>
-                    <p style="color: #64748b; font-size: 13px; margin-top: 12px;">(This is a demo. Real communities launch after payment.)</p></div>
+                
+                <p style="color: #64748b; font-size: 12px; margin-top: 16px; text-align: center;">
+                    🔒 Free setup. Pay via PayPal after we email you.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- How It Works -->
-    <section class="how-it-works" id="how">
+    <section class="features" id="features">
         <div class="container">
-            <h2 class="section-title">How It Works</h2>
-            <p class="section-subtitle">Three steps. That's it.</p>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Create</h3>
-                    <p>Name your community, pick a URL. Takes 60 seconds.</p>
+            <h2 class="section-title">Everything You Need</h2>
+            <p class="section-subtitle">No clutter. No noise. Just a clean space.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>💬 Real-Time Chat</h3>
+                    <p>Instant messaging with your members. No algorithms hiding posts.</p>
                 </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Invite</h3>
-                    <p>Share your link. Members join instantly. No app download.</p>
+                <div class="feature-card">
+                    <h3>📁 File Sharing</h3>
+                    <p>Share docs, videos, images. Organized and searchable.</p>
                 </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Grow</h3>
-                    <p>Chat, share, build. Upgrade when you need more power.</p>
+                <div class="feature-card">
+                    <h3>👥 Member Management</h3>
+                    <p>Roles, permissions, invites. You're the boss.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔒 Privacy First</h3>
+                    <p>No ads. No data mining. Your community, your data.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing -->
     <section class="pricing" id="pricing">
         <div class="container">
             <h2 class="section-title">Simple Pricing</h2>
@@ -544,12 +369,10 @@
                         <li>Up to 25 members</li>
                         <li>Basic chat</li>
                         <li>1 admin</li>
-                        <li>Community support</li>
                     </ul>
-                    <a href="#" class="btn btn-secondary" style="width: 100%;">Get Started</a>
+                    <a href="#create" class="btn btn-secondary" style="width: 100%;">Get Started</a>
                 </div>
                 <div class="pricing-card popular">
-                    <div class="popular-badge">MOST POPULAR</div>
                     <h3>Starter</h3>
                     <div class="price">$5<span>/month</span></div>
                     <ul>
@@ -557,54 +380,29 @@
                         <li>File sharing</li>
                         <li>3 admins</li>
                         <li>Custom branding</li>
-                        <li>Email support</li>
                     </ul>
-                    <!-- REPLACE THIS WITH YOUR PAYPAL LINK -->
-                    <a href="https://paypal.me/chillclothes/5" class="paypal-btn" target="_blank">Pay with PayPal</a>
+                    <a href="https://paypal.me/YOURPAYPALUSERNAME/5" class="paypal-btn" target="_blank">Pay with PayPal</a>
                 </div>
                 <div class="pricing-card">
                     <h3>Pro</h3>
                     <div class="price">$15<span>/month</span></div>
                     <ul>
                         <li>Unlimited members</li>
-                        <li>Analytics dashboard</li>
+                        <li>Analytics</li>
                         <li>10 admins</li>
-                        <li>Priority support</li>
                         <li>API access</li>
                     </ul>
-                    <!-- REPLACE THIS WITH YOUR PAYPAL LINK -->
-                    <a href="https://paypal.me/chillclothes/15" class="paypal-btn" target="_blank">Pay with PayPal</a>
+                    <a href="https://paypal.me/YOURPAYPALUSERNAME/15" class="paypal-btn" target="_blank">Pay with PayPal</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <p style="margin-bottom: 16px;">
-                <a href="#">Twitter</a>
-                <a href="#">Email</a>
-                <a href="#">Privacy</a>
-                <a href="#">Terms</a>
-            </p>
             <p>© 2026 CrewBase. Built for creators.</p>
         </div>
     </footer>
 
-<script>
-    document.getElementById('communityForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const name = document.getElementById('communityName').value;
-        const creator = document.getElementById('creatorName').value;
-        
-        // Open their email client with pre-filled message
-        const subject = `New CrewBase Community: ${name}`;
-        const body = `Hi, I want to create a community on CrewBase.%0D%0A%0D%0ACommunity Name: ${name}%0D%0ACreator Name: ${creator}%0D%0A%0D%0AI'm ready to pay $5/month via PayPal.`;
-        
-        window.location.href = `mailto:thechillclothesstore@gmail.com?subject=${subject}&body=${body}`;
-    });
-<script>
-    
 </body>
 </html>
